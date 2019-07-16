@@ -18,7 +18,7 @@ class Datum(Base):
 
     unique_id = Column(Unicode(64), nullable=False)
     datum_id = Column(Integer, primary_key=True)
-    time_created = Column(DateTime, nullable=False)
+    time_created = Column(DateTime(timezone=False), nullable=False)
     datum_type = Column(Unicode(256), nullable=False)
     numeric_value = Column(Numeric(precision=20, scale=10))
     string_value = Column(Unicode(256))

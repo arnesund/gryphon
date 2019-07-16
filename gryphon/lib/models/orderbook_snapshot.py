@@ -14,7 +14,7 @@ class OrderbookSnapshot(Base):
     unique_id = Column(Unicode(64), nullable=False)
     orderbook_id = Column(Integer, primary_key=True)
     data = Column(UnicodeText(length=2**31))
-    time_retrieved = Column(DateTime, nullable=False)
+    time_retrieved = Column(DateTime(timezone=False), nullable=False)
  
     def __init__(self, data, time_retrieved):
         self.unique_id = u'ord_%s' % unicode(uuid.uuid4().hex)

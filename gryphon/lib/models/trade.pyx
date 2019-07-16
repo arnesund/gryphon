@@ -34,7 +34,7 @@ class Trade(Base):
     trade_type = Column(Unicode(64))
     unique_id = Column(Unicode(64), nullable=False)
     exchange_trade_id = Column(Unicode(64))
-    time_created = Column(DateTime, nullable=False)
+    time_created = Column(DateTime(timezone=False), nullable=False)
     
     _fee = Column('fee', Numeric(precision=24, scale=14))
     _fee_currency = Column('fee_currency', Unicode(3))

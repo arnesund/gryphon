@@ -43,8 +43,8 @@ class Transaction(Base):
     transaction_type = Column(Unicode(64))
     transaction_status = Column(Unicode(64))
     unique_id = Column(Unicode(64), nullable=False)
-    time_created = Column(DateTime, nullable=False)
-    time_completed = Column(DateTime, nullable=True)
+    time_created = Column(DateTime(timezone=False), nullable=False)
+    time_completed = Column(DateTime(timezone=False), nullable=True)
     
     _amount = Column('amount', Numeric(precision=24, scale=14))
     _amount_currency = Column('amount_currency', Unicode(3))

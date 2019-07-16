@@ -43,15 +43,15 @@ class Liability(Base):
     # Meta-columns.
     liability_id = Column(Integer, primary_key=True)
     unique_id = Column(Unicode(64), nullable=False)
-    time_created = Column(DateTime, nullable=False)
+    time_created = Column(DateTime(timezone=False), nullable=False)
 
     # Data columns.
     _amount = Column('amount', Numeric(precision=24, scale=14))
     _amount_currency = Column('amount_currency', Unicode(3))
     liability_type = Column(Unicode(64))
     entity_name = Column(Unicode(128), nullable=False)
-    time_started = Column(DateTime, nullable=True)
-    time_repayed = Column(DateTime, nullable=True)
+    time_started = Column(DateTime(timezone=False), nullable=True)
+    time_repayed = Column(DateTime(timezone=False), nullable=True)
     _details = Column('details', UnicodeText(length=2**31))
 
     def __init__(self, amount, liability_type, entity_name, time_started=None, time_repayed=None, details=None):

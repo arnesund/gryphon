@@ -43,9 +43,9 @@ class MarketData(Base):
 
     market_data_id = Column(Integer, primary_key=True)
     unique_id = Column(Unicode(64), nullable=False)
-    time_added = Column(DateTime, nullable=False)
+    time_added = Column(DateTime(timezone=False), nullable=False)
 
-    timestamp = Column(DateTime, nullable=False)
+    timestamp = Column(DateTime(timezone=False), nullable=False)
     exchange = Column(Unicode(256))
     price = Column('price', Numeric(precision=20, scale=10))
     currency = Column(Unicode(256))

@@ -18,7 +18,7 @@ class Event(Base):
    
     unique_id = Column(Unicode(64), nullable=False)
     event_id = Column(Integer, primary_key=True)
-    time_created = Column(DateTime, nullable=False)
+    time_created = Column(DateTime(timezone=False), nullable=False)
     exchange_name = Column(Unicode(256), nullable=False)
     event_type = Column(Unicode(256), nullable=False)
     data = Column(UnicodeText(length=2**31))

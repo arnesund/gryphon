@@ -33,8 +33,8 @@ class Order(Base, BasicOrder):
     actor = Column(Unicode(64))
     exchange_rate = Column(Numeric(precision=20, scale=10))
     
-    time_created = Column(DateTime, nullable=False)
-    time_executed = Column(DateTime)
+    time_created = Column(DateTime(timezone=False), nullable=False)
+    time_executed = Column(DateTime(timezone=False))
 
     _exchange_name = Column('exchange_name', Unicode(64))
     _price = Column('price', Numeric(precision=20, scale=10))

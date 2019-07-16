@@ -18,7 +18,7 @@ class Ticker(Base):
     ticker_id = Column(Integer, primary_key=True)
     exchange = Column(Unicode(256))
     data = Column(UnicodeText(length=2**31))
-    time_retrieved = Column(DateTime, nullable=False)
+    time_retrieved = Column(DateTime(timezone=False), nullable=False)
  
     def __init__(self, exchange, data):
         self.time_retrieved = datetime.utcnow()
